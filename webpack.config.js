@@ -2,37 +2,69 @@ var webpack = require('webpack');
 
 module.exports = {
 
-  entry: {
+    entry: {
     'polyfills': [
-      'core-js/es6',
-      'core-js/es7/reflect',
-      'zone.js/dist/zone'
+        'core-js/es6',
+        'core-js/es7/reflect',
+        'zone.js/dist/zone'
     ],
-    'app': './src/main.ts'
-  },
-  output: {
-    path: './dist',
-    filename: '[name].js'
-  },
-  module: {
-    loaders: [
-      {test: /\.component.ts$/, loader: 'ts!angular2-template'},
-      {test: /\.ts$/, exclude: /\.component.ts$/, loader: 'ts'},
-      {test: /\.html$/, loader: 'raw'},
-      {test: /\.css$/, loader: 'raw'}
+        'app': __dirname +'/src/main.ts'
+    },
+    output: {
+        path: __dirname +'/dist',
+        filename: '[name].js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.component.ts$/,
+                use: [
+                    'angular2-template-loader',
+                    'ts-loader'
+                ]
+            },
+            {
+                test: /\.ts$/,
+                exclude: /\.component.ts$/,
+                use: [{
+                    loader: 'ts-loader'
+                }]
+            },
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: 'raw-loader'
+                }]
+            },
+            {
+                test: /\.css$/,
+                use: [{
+                    loader: 'raw-loader'
+                }]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'to-string-loader',
+                    'style-loader',
+                    'raw-loader',
+                    'sass-loader'
+                    
+                ]
+            }
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.ts', '.html', '.css']
-  },
-  plugins: [
+    },
+    resolve: {
+        extensions: ['.js', '.ts', '.html', '.css']
+    },
+    plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'polyfills'
-    }),
+            name: 'polyfills'
+        }),
     new webpack.DefinePlugin({
-      app: {
-        environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')
-      }
-    })
+            app: {
+                environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')
+            }
+        })
   ]
 };
