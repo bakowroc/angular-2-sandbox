@@ -26,9 +26,10 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /\.component.ts$/,
-                use: [{
-                    loader: 'ts-loader'
-                }]
+                use: [
+                    'eslint-loader',
+                    'ts-loader'
+                ]
             },
             {
                 test: /\.html$/,
@@ -48,8 +49,7 @@ module.exports = {
                     'to-string-loader',
                     'style-loader',
                     'raw-loader',
-                    'sass-loader'
-                    
+                    'sass-loader'   
                 ]
             }
     ]
