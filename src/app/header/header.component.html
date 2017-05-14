@@ -1,7 +1,9 @@
 <header class="main-header">
-
     <navigation></navigation>
-<!--
-    <search-box></search-box>
--->
+    
+    <search-box (searchValue)="searchValue = $event">
+    </search-box>
+    {{searchValue}}
+    <search-results *ngIf="searchValue" 
+    </search-results>
 </header>

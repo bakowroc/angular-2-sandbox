@@ -1,0 +1,5 @@
+.main-navigation{
+    float: left;
+    width: auto;
+    @include vertical-menu(#fff, 40px);
+}

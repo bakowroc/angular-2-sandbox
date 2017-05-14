@@ -7,4 +7,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 
-export default class HeaderComponent{} 
+export default class HeaderComponent{
+    searchValue: string;
+    constructor(){}
+} 

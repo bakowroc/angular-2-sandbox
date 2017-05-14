@@ -1,6 +1,12 @@
 .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     float: left;
-    background: red;
+    background-color: cornflowerblue;
     padding: 20px;
-    height: 100px;
+    height: auto;
+    width: 100%;
+    box-shadow: 2px 3px 8px rgba(black, 0.2);
 } 

@@ -51,10 +51,16 @@ module.exports = {
                     'to-string-loader',
                     'style-loader',
                     'raw-loader',
-                    'sass-loader'
+                    'sass-loader',
+                    {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: ['./src/assets/scss/variables.scss', './src/assets/scss/mixins.scss']
+                        }
+                    }
                 ]
             }
-    ]
+        ]
     },
     resolve: {
         extensions: ['.js', '.ts', '.html', '.css', '.scss']
@@ -69,8 +75,8 @@ module.exports = {
             }
         }),
     new webpack.ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        __dirname
+            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            __dirname
     ),
   ]
 };
