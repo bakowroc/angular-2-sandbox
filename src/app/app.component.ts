@@ -1,9 +1,9 @@
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
+ 
 
 @Component ({
     selector: 'my-app',
-    templateUrl: './app.component.html',
-    styleUrls: ['../../node_modules/bootstrap/dist/css/bootstrap.min.css']
+    templateUrl: './app.component.html'
 })
 
-export default class AppComponent{}
+export default class AppComponent{} 

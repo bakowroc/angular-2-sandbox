@@ -4,7 +4,8 @@
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "parser": "babel-eslint"
     },
     "rules": {
         "semi": 2

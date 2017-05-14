@@ -1,4 +1,5 @@
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
+
 
 @Component ({
     selector: 'main-header',
@@ -6,4 +7,4 @@ import {Component} from '@angular/core'
     styleUrls: ['./header.component.scss']
 })
 
-export default class HeaderComponent{}
+export default class HeaderComponent{} 

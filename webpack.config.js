@@ -3,15 +3,15 @@ var webpack = require('webpack');
 module.exports = {
 
     entry: {
-    'polyfills': [
+        'polyfills': [
         'core-js/es6',
         'core-js/es7/reflect',
         'zone.js/dist/zone'
     ],
-        'app': __dirname +'/src/main.ts'
+        'app': __dirname + '/src/main.ts'
     },
     output: {
-        path: __dirname +'/dist',
+        path: __dirname + '/dist',
         filename: '[name].js'
     },
     module: {
@@ -39,9 +39,11 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [{
-                    loader: 'raw-loader'
-                }]
+                use: [
+                    'to-string-loader',
+                    'style-loader',
+                    'raw-loader'
+                ]
             },
             {
                 test: /\.scss$/,
@@ -49,13 +51,13 @@ module.exports = {
                     'to-string-loader',
                     'style-loader',
                     'raw-loader',
-                    'sass-loader'   
+                    'sass-loader'
                 ]
             }
     ]
     },
     resolve: {
-        extensions: ['.js', '.ts', '.html', '.css']
+        extensions: ['.js', '.ts', '.html', '.css', '.scss']
     },
     plugins: [
     new webpack.optimize.CommonsChunkPlugin({
@@ -65,6 +67,10 @@ module.exports = {
             app: {
                 environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')
             }
-        })
+        }),
+    new webpack.ContextReplacementPlugin(
+        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+        __dirname
+    ),
   ]
 };
