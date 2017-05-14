@@ -10,7 +10,7 @@ import SearchBoxComponent from './header/search-box/search-box.component'
 import SearchResultsComponent from './header/search-results/search-results.component'
 
 import ContainerComponent from './container/container.component';
-import BoxComponent from './container/box/box.component';
+import RepoBoxComponent from './container/repo-box/repo-box.component';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import BoxComponent from './container/box/box.component';
                    SearchBoxComponent,
                    SearchResultsComponent,
                    ContainerComponent,
-                   BoxComponent
+                   RepoBoxComponent
                   ],
     bootstrap: [AppComponent]
     
