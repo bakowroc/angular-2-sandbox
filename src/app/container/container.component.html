@@ -1,10 +1,21 @@
 <div class="container">
-    <div class="row row-eq-height">
-        <div class="col-xl-3">
-            <repo-list [Projects] = "Projects"></repo-list>      
+    <div class="row">
+        <div class="col-xl-12">
+            <h1 class="container-title">Meet your repo!</h1>
         </div>
+        <div class="col-xl-3">
+            
+            <repo-list [Projects] = "Projects" 
+                       (selectedProjectBox) = "selected = $event">
+            </repo-list>
+        </div>
+        
         <div class="col-xl-9">
-            <repo-box></repo-box>
+            
+            <repo-box *ngIf = "selected" 
+                      [project] = "selected">
+            </repo-box>
+            
         </div>
     </div>
 </div>

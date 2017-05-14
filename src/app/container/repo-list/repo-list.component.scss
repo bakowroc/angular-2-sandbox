@@ -1,0 +1,22 @@
+repo-list{
+    nav{
+        float: left;
+        width: 100%;
+        background: $dark-blue-grey;
+        @include border-radius(2px);
+        ul{
+            width: 100%;
+            float: left;
+            li{
+                color: #fff;
+                padding: 15px; 
+                &.selected{
+                    background: lighten($dark-blue-grey, 8%);
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

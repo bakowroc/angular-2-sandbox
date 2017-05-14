@@ -3,7 +3,7 @@ repo-box{
     float: left;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 20px;
     background: darken(#fff, 1%);
     box-shadow: 1px 1px 1px rgba(black, 0.06);
     position: relative;
@@ -12,12 +12,12 @@ repo-box{
         margin-bottom: 20px;
     }
     .title{
-        font-size: $font-title;
+        font-size: $font-main-title;
         width: 100%;
     
     }
     .author, .date{
-        font-size: $font-subtext;
+        font-size: $font-small-desc;
         color: #ccc;
     }
     .date{
@@ -25,10 +25,16 @@ repo-box{
     }
     .desc{
         font-size: $font-normal;
+        clear:both;
     }
-    .link{
-        @include button($dark-blue-grey);
+    .button-overflow{
+        float: right;
+        width: 180px;
         clear: both;
-        margin-bottom: 0;
+        .link{
+            @include button($flat-green);
+            clear: both;
+            margin-bottom: 0;
+        }
     }
 }

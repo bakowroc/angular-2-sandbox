@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        <li *ngFor="let project of Projects"
+            (click)="selectProject(project)" 
+            [class.selected]="project.name == selectedProject">
+            
+            {{project.name}}
+            
+        </li>
+    </ul>
+</nav>

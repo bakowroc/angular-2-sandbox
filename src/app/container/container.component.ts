@@ -11,6 +11,7 @@ import {
  
  export default class ContainerComponent implements OnInit {
     Projects: Array<Object>; 
+    selected: Object;
     constructor(){} 
     ngOnInit(){
         this.Projects = [
