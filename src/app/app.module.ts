@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core'
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import AppComponent from './app.component'
+
+import ApiService from './services/api.service';
 
 import HeaderComponent from './header/header.component'
 import NavigationComponent from './header/navigation/navigation.component'
@@ -12,21 +15,25 @@ import SearchResultsComponent from './header/search-results/search-results.compo
 import ContainerComponent from './container/container.component';
 import RepoBoxComponent from './container/repo-box/repo-box.component';
 
-
 @NgModule({
-    
+
     imports: [BrowserModule,
-             FormsModule],
-    declarations: [AppComponent, 
-                   HeaderComponent, 
+             FormsModule,
+             HttpModule
+           ],
+    declarations: [AppComponent,
+                   HeaderComponent,
                    NavigationComponent,
                    SearchBoxComponent,
                    SearchResultsComponent,
                    ContainerComponent,
                    RepoBoxComponent
+                  //  Test
                   ],
+    providers: [ApiService
+                ],
     bootstrap: [AppComponent]
-    
+
 })
 
 export default class AppModule{}
