@@ -1,0 +1,16 @@
+repo-user{
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    .user{
+        float: left;
+        font-size: $font-small-desc;
+    }
+    .button-overflow{
+       
+        float: right;
+        .unwatch-me{
+            @include button(cornflowerblue, 5px);
+        }
+    }
+}
