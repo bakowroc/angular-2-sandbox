@@ -7,7 +7,7 @@
             color: rgba(black, 0.4);
         }
         @include focus('reset');
-        @include input(14px); 
+        @include input($font-normal); 
         @include border-radius(2px); 
     }
 }

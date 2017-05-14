@@ -11,7 +11,7 @@ import {
 })
 
 export default class SearchResultsComponent {
+    @Input() filterBy: string;
 
     constructor(){}
-    
 } 

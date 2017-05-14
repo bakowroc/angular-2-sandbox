@@ -3,7 +3,6 @@
     
     <search-box (searchValue)="searchValue = $event">
     </search-box>
-    {{searchValue}}
-    <search-results *ngIf="searchValue" 
+    <search-results *ngIf="searchValue" [filterBy] = "searchValue">
     </search-results>
 </header>

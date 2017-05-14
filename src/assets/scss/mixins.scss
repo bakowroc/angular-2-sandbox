@@ -27,6 +27,20 @@
     border: none;
 }
 
+@mixin button($background, $radius: 2px){
+    text-decoration: none;
+    width: 100%;
+    padding: 7px;
+    text-align: center;
+    background: $background;
+    border: 1px solid darken($background, 5%);
+    color: #fff;
+    @include border-radius($radius);
+    &:hover{
+        background: lighten($background, 5%)
+    }
+}
+
 @mixin vertical-menu($link-color, $margin){
     ul{
         display: inline-block;
