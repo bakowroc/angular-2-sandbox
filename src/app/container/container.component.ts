@@ -12,8 +12,11 @@ import ApiService from '../services/api.service';
 })
 
  export default class ContainerComponent implements OnInit {
+
     Projects: Array<Object>;
+    selected: Object;
     constructor(private api:ApiService){}
+
     ngOnInit(){
         this.Projects = [
             {name: 'Angular 2 sandbox', author: 'bakowroc',desc: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat.', link: 'https://github.com/bakowroc/angular-2-sandbox', date: '14.05.2017'},

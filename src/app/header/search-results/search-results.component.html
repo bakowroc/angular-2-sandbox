@@ -1,3 +1,17 @@
-<div class="search-results">
-    You are looking for: {{filterBy}}
-</div>
+
+You are looking for: {{filterBy}}
+
+<nav class="users">
+    <ul>
+        <li>{{filterBy}}
+            <div class="button-overflow">
+                <span class="watch-me" 
+                      (click)="watchUser(filterBy)">
+
+                    Watch
+
+                </span>
+            </div>
+        </li>
+    </ul>
+</nav>

@@ -14,6 +14,8 @@ import SearchResultsComponent from './header/search-results/search-results.compo
 
 import ContainerComponent from './container/container.component';
 import RepoBoxComponent from './container/repo-box/repo-box.component';
+import RepoListComponent from './container/repo-list/repo-list.component';
+import RepoUserComponent from './container/repo-user/repo-user.component';
 
 @NgModule({
 
@@ -27,8 +29,14 @@ import RepoBoxComponent from './container/repo-box/repo-box.component';
                    SearchBoxComponent,
                    SearchResultsComponent,
                    ContainerComponent,
+<<<<<<< HEAD
                    RepoBoxComponent
                   //  Test
+=======
+                   RepoBoxComponent,
+                   RepoListComponent,
+                   RepoUserComponent
+>>>>>>> eb8f546fa8ee96cd1d4f13ced29c0218dc92ee77
                   ],
     providers: [ApiService
                 ],

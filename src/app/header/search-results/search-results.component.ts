@@ -3,7 +3,6 @@ import {
     Input
 } from '@angular/core';
 
-
 @Component ({
     selector: 'search-results',
     templateUrl: './search-results.component.html',
@@ -11,7 +10,13 @@ import {
 })
 
 export default class SearchResultsComponent {
-    @Input() filterBy: string;
+    @Input() 
+        filterBy: string;
 
     constructor(){}
+     
+    watchUser(user: string){
+        localStorage.setItem('user', user);
+        location.reload();
+    }
 } 

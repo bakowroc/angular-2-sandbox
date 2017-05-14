@@ -1,17 +1,37 @@
 import { 
     Component,
-    Input
+    Input,
+    Output,
+    EventEmitter,
+    OnInit
 } from '@angular/core';
 
 @Component({
-    selector: 'box',
-    templateUrl: './box.component.html',
-    styleUrls: ['./box.component.scss']
+    selector: 'repo-list',
+    templateUrl: './repo-list.component.html',
+    styleUrls: ['./repo-list.component.scss']
 })
  
- export default class BoxComponent{
+ export default class RepoListComponent implements OnInit{
      
-    @Input() project: Object;
+    @Input() 
+        Projects: Array<Object>;
+    @Output() 
+        selectedProjectBox = new EventEmitter<Object>();
+    
+    selectedProject: string;
+     
+    constructor(){}
+     
+    ngOnInit(){
+        const project: any = this.Projects[0]
+        this.selectedProjectBox.emit(project);
+        this.selectedProject = project.name;
+    }
+    selectProject(project: any){
+        this.selectedProject = project.name;
+        this.selectedProjectBox.emit(project);
+    }
      
      
  }

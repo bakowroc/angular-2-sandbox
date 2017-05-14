@@ -1,4 +1,4 @@
-.search-results{
+search-results{
     float: right;
     width: 360px;
     height: 100%;
@@ -9,4 +9,29 @@
     padding: 20px;
     height: 200px;
     color: #fff;
+    nav.users{
+        float: left;
+        width: 100%;
+        ul{
+            width: 100%;
+            float: left;
+            li{
+                float: left;
+                padding: 10px;
+                width: 100%;
+                color: cornflowerblue;
+                text-decoration: underline;
+                .button-overflow{
+                    float: right;
+                    width: 70px;
+                    .watch-me{
+                        @include button(cornflowerblue, 3px);
+                        font-size: $font-subtext;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
 }
