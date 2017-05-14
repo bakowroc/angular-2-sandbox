@@ -11,6 +11,7 @@ import SearchResultsComponent from './header/search-results/search-results.compo
 
 import ContainerComponent from './container/container.component';
 import RepoBoxComponent from './container/repo-box/repo-box.component';
+import RepoListComponent from './container/repo-list/repo-list.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import RepoBoxComponent from './container/repo-box/repo-box.component';
                    SearchBoxComponent,
                    SearchResultsComponent,
                    ContainerComponent,
-                   RepoBoxComponent
+                   RepoBoxComponent,
+                   RepoListComponent
                   ],
     bootstrap: [AppComponent]
     

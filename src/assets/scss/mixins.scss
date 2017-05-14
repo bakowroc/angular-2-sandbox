@@ -33,7 +33,7 @@
     padding: 7px;
     text-align: center;
     background: $background;
-    border: 1px solid darken($background, 5%);
+    border-bottom: 2px solid darken($background, 10%);
     color: #fff;
     @include border-radius($radius);
     &:hover{
