@@ -4,14 +4,14 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'box',
-    templateUrl: './box.component.html',
-    styleUrls: ['./box.component.scss']
+    selector: 'repo-list',
+    templateUrl: './repo-list.component.html',
+    styleUrls: ['./repo-list.component.scss']
 })
  
- export default class BoxComponent{
+ export default class RepoListComponent{
      
-    @Input() project: Object;
+    @Input() Projects: Array<Object>;
      
      
  }
