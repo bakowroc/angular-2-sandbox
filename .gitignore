@@ -1,5 +1,5 @@
 node_modules/*
 src/app/styles/*.css
 src/app/styles/*.css.map
-dist/.*js
+dist/*.js
 .sass-cache/*
