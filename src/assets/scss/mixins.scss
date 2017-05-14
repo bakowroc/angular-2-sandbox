@@ -9,7 +9,7 @@
   &::-webkit-input-placeholder {@content}
   &:-moz-placeholder           {@content}
   &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}  
+  &:-ms-input-placeholder      {@content}
 };
 
 @mixin focus ($action){
@@ -67,4 +67,3 @@
         }
     }
 };
-
