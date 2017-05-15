@@ -29,14 +29,10 @@ import RepoUserComponent from './container/repo-user/repo-user.component';
                    SearchBoxComponent,
                    SearchResultsComponent,
                    ContainerComponent,
-<<<<<<< HEAD
-                   RepoBoxComponent
-                  //  Test
-=======
+
                    RepoBoxComponent,
                    RepoListComponent,
                    RepoUserComponent
->>>>>>> eb8f546fa8ee96cd1d4f13ced29c0218dc92ee77
                   ],
     providers: [ApiService
                 ],

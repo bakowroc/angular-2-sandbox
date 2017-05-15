@@ -10,11 +10,15 @@ export default class ApiService{
 
   constructor(private http:Http){}
 
-  fetchData(){
-    this.http.get(this.apiServer+'/users/TomaszBorczyk').map(
-      res=>res.json()
-    ).subscribe(
-      data => console.log(data)
-    );
+  fetchUserRepos(username:string){
+    return this.http
+      .get(this.getUserRepos(username))
+      .map(res => res.json()
+              .map(o => <Object>({name: o.name, url: o.url}))
+            );
+  }
+
+  getUserRepos(username:string):string{
+    return this.apiServer+'/users/'+username+'/repos';
   }
 }

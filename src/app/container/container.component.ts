@@ -15,6 +15,8 @@ import ApiService from '../services/api.service';
 
     Projects: Array<Object>;
     selected: Object;
+    Test:Object
+    Test2: Array<Object> =[];
     constructor(private api:ApiService){}
 
     ngOnInit(){
@@ -25,6 +27,21 @@ import ApiService from '../services/api.service';
             {name: 'SelectBox', author: 'Tomasz' ,desc: 'Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque. Etiam quam nisi, molestie ac dolor in.', link: 'https://github.com/TomaszBorczyk/selectbox', date: '12.05.2017'},
         ];
 
-        this.api.fetchData();
+        // this.Test = this.api.fetchUserRepos('TomaszBorczyk')
+        //         .subscribe(data => data);
+        // this.api.fetchUserRepos('TomaszBorczyk').subscribe(data => console.log(data.map(res=>res.name)));
+        // this.api.fetchUserRepos('TomaszBorczyk').subscribe(data => this.Test =(data.map(res=>res.name)));
+        //
+        // this.api
+        //   .fetchUserRepos('TomaszBorczyk')
+        //   .subscribe(o => this.Test2 = o);
+
+        this.api
+          .fetchUserRepos('TomaszBorczyk')
+          .subscribe(o => this.Test2.push(o));
+
+        console.log(this.Test2);
+        console.log(typeof this.Projects);
+
     }
  }
