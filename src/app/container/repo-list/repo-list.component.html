@@ -2,7 +2,7 @@
     <ul>
         <li *ngFor="let project of Projects; let i=index"
             (click)="selectProject(i)"
-            [class.selected]="index == selectedProjectIndex">
+            [class.selected]="i == selectedProjectIndex">
             {{project.name}}
 
         </li>
