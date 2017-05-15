@@ -1,11 +1,10 @@
 <nav>
     <ul>
-        <li *ngFor="let project of Projects"
-            (click)="selectProject(project)" 
-            [class.selected]="project.name == selectedProject">
-            
+        <li *ngFor="let project of Projects; let i=index"
+            (click)="selectProject(i)"
+            [class.selected]="index == selectedProjectIndex">
             {{project.name}}
-            
+
         </li>
     </ul>
 </nav>

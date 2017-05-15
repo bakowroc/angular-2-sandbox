@@ -17,6 +17,8 @@ import RepoBoxComponent from './container/repo-box/repo-box.component';
 import RepoListComponent from './container/repo-list/repo-list.component';
 import RepoUserComponent from './container/repo-user/repo-user.component';
 
+import RepoDataModel from './repoData/repoData.model';
+
 @NgModule({
 
     imports: [BrowserModule,

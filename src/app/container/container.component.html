@@ -5,17 +5,17 @@
         </div>
         <div class="col-xl-3">
             <repo-user (subscribedUser) = "subscribedUser"></repo-user>
-            <repo-list [Projects] = "Projects" 
+            <repo-list [Projects] = "Projects"
                        (selectedProjectBox) = "selected = $event">
             </repo-list>
         </div>
-        
+
         <div class="col-xl-9">
-            
-            <repo-box *ngIf = "selected" 
+
+            <repo-box *ngIf = "selected"
                       [project] = "selected">
             </repo-box>
-            
+
         </div>
     </div>
 </div>
