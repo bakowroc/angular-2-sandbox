@@ -5,9 +5,10 @@
         </div>
         <div class="col-xl-3">
             
-            <repo-user (subscribedUser) = "smth = $event"></repo-user>
-            {{subscribedUser}}
-            <repo-list *ngIf = "subsribedUser" 
+            <repo-user (subscribedUser) = "handleSubscribedUser($event)"></repo-user>
+            <search-box (searchValue) = "filterBy = $event"></search-box>
+            <repo-list 
+                       [filterBy] = "filterBy"
                        [Projects] = "Projects"
                        (selectedProjectBox) = "selected = $event">
             </repo-list>

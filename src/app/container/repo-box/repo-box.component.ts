@@ -12,7 +12,8 @@ import RepoDataModel from '../../repoData/repoData.model';
 
  export default class RepoBoxComponent{
 
-    @Input() project: RepoDataModel;
+    @Input() 
+        project: RepoDataModel;
 
 
  }

@@ -6,7 +6,9 @@ import {
     OnInit,
     OnChanges
 } from '@angular/core';
+
 import RepoDataModel from '../../repoData/repoData.model';
+
 
 
 @Component({
@@ -19,6 +21,8 @@ import RepoDataModel from '../../repoData/repoData.model';
 
     @Input()
         Projects: Array<RepoDataModel> =[];
+    @Input()
+        filterBy: string;
     @Output()
         selectedProjectBox = new EventEmitter<RepoDataModel>();
 
@@ -29,18 +33,15 @@ import RepoDataModel from '../../repoData/repoData.model';
     ngOnInit(){
        
     }
-     
      ngOnChanges(){
         if(this.Projects)
             this.selectedProjectBox
                 .emit(this.Projects[0]);
      }
 
-    selectProject(index: number){
+    selectProject(index: number): void{
         this.selectedProjectIndex = index;
-        this.selectedProjectBox
-            .emit(this.Projects[this.selectedProjectIndex]);
+        return this.selectedProjectBox
+                    .emit(this.Projects[this.selectedProjectIndex]);
     }
-
-
  }

@@ -1,7 +1,8 @@
 import {
     Component,
     OnInit,
-    OnChanges
+    OnChanges,
+    Input
 } from '@angular/core';
 import ApiService from '../services/api.service';
 import RepoDataModel from '../repoData/repoData.model';
@@ -14,20 +15,22 @@ import RepoDataModel from '../repoData/repoData.model';
     providers: [ApiService]
 })
 
- export default class ContainerComponent implements OnInit, OnChanges {
+ export default class ContainerComponent implements OnChanges, OnInit {
     Projects: Array<RepoDataModel>;
     selected: Object;
-    subscribedUser: string = 'bakowroc';
+    subscribedUser: string;
+     
     constructor(private api:ApiService){}
 
-    ngOnInit(){
-        this.subscribedUser = localStorage.getItem('user'); //To solve
-        this.api
-            .fetchUserRepos(this.subscribedUser)
-            .then(o=> this.Projects=o);
-    }
+    ngOnInit(){}
     ngOnChanges(){}
-    handleSubscribedUser(event){
-        this.subscribedUser = event;
+     
+    handleSubscribedUser(user: string): Promise<Array<RepoDataModel>>{
+        if(user){
+            this.subscribedUser = user;
+            return this.api
+                        .fetchUserRepos(this.subscribedUser)
+                        .then(o=> this.Projects=o);
+        }
     }
  }

@@ -19,22 +19,25 @@ import RepoUserComponent from './container/repo-user/repo-user.component';
 
 import RepoDataModel from './repoData/repoData.model';
 
+import SearchPipe from './pipes/search.pipe';
+
 @NgModule({
 
     imports: [BrowserModule,
              FormsModule,
              HttpModule
            ],
-    declarations: [AppComponent,
+    declarations: [SearchPipe,
+                   AppComponent,
                    HeaderComponent,
                    NavigationComponent,
                    SearchBoxComponent,
                    SearchResultsComponent,
                    ContainerComponent,
-
                    RepoBoxComponent,
                    RepoListComponent,
-                   RepoUserComponent
+                   RepoUserComponent,
+                   
                   ],
     providers: [ApiService
                 ],
