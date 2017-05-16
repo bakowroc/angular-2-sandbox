@@ -1,8 +1,8 @@
 <nav>
     <ul>
-        <li *ngFor="let project of Projects; let i=index"
-            (click)="selectProject(i)"
-            [class.selected]="index == selectedProjectIndex">
+        <li *ngFor="let project of Projects; let projectIndex=index"
+            (click)="selectProject(projectIndex)"
+            [class.selected]="projectIndex == selectedProjectIndex">
             {{project.name}}
 
         </li>

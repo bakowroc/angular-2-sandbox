@@ -3,7 +3,8 @@ import {
     Input,
     Output,
     EventEmitter,
-    OnInit
+    OnInit,
+    OnChanges
 } from '@angular/core';
 import RepoDataModel from '../../repoData/repoData.model';
 
@@ -14,26 +15,31 @@ import RepoDataModel from '../../repoData/repoData.model';
     styleUrls: ['./repo-list.component.scss']
 })
 
- export default class RepoListComponent implements OnInit{
+ export default class RepoListComponent implements OnInit, OnChanges{
 
     @Input()
         Projects: Array<RepoDataModel> =[];
     @Output()
         selectedProjectBox = new EventEmitter<RepoDataModel>();
 
-    selectedProjectIndex: number;
+    selectedProjectIndex: number = 0;
 
     constructor(){}
 
     ngOnInit(){
-        // const project: any = this.Projects[0]
-        // this.selectedProjectBox.emit(project);
-        // this.selectedProject = project.name;
+       
     }
+     
+     ngOnChanges(){
+        if(this.Projects)
+            this.selectedProjectBox
+                .emit(this.Projects[0]);
+     }
 
     selectProject(index: number){
         this.selectedProjectIndex = index;
-        this.selectedProjectBox.emit(this.Projects[this.selectedProjectIndex]);
+        this.selectedProjectBox
+            .emit(this.Projects[this.selectedProjectIndex]);
     }
 
 

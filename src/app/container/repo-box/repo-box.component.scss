@@ -31,6 +31,9 @@ repo-box{
         float: right;
         width: 180px;
         clear: both;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
         .link{
             @include button($flat-green);
             clear: both;

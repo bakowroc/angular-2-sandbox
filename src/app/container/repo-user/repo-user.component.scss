@@ -10,7 +10,7 @@ repo-user{
        
         float: right;
         .unwatch-me{
-            @include button(cornflowerblue, 5px);
+            @include button(cornflowerblue, 5px, 'square');
         }
     }
 }

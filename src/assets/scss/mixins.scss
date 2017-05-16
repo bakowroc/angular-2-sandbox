@@ -27,10 +27,13 @@
     border: none;
 }
 
-@mixin button($background, $padding: 7px, $radius: 2px){
+@mixin button($background, $padding: 7px, $type: 'normal', $radius: 2px){
     text-decoration: none;
     width: 100%;
     padding: $padding;
+    @if $type == 'square' {
+       padding: $padding 2* $padding;
+    }
     text-align: center;
     background: $background;
     border-bottom: 2px solid darken($background, 10%);

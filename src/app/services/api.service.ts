@@ -11,13 +11,13 @@ export default class ApiService{
 
   constructor(private http:Http){}
 
-  fetchUserRepos(username:string){
+  fetchUserRepos(username:string):Promise<Array<RepoDataModel>>{
     return this.http
-      .get(this.getUserReposUrl(username))
-      .toPromise()
-      .then((res:Response) => res.json()
-              .map(o => new RepoDataModel(o.name, o.owner.login, o.description, o.html_url, o.created_at))
-            );
+                .get(this.getUserReposUrl(username))
+                .toPromise()
+                .then((res:Response) => res.json()
+                      .map(o => new RepoDataModel(o.name, o.owner.login, o.description, o.html_url, o.created_at))
+                    );
   }
 
   getUserReposUrl(username:string):string{

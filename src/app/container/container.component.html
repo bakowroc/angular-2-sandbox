@@ -4,10 +4,14 @@
             <h1 class="container-title">Meet your repo!</h1>
         </div>
         <div class="col-xl-3">
-            <repo-user (subscribedUser) = "subscribedUser"></repo-user>
-            <repo-list [Projects] = "Projects"
+            
+            <repo-user (subscribedUser) = "smth = $event"></repo-user>
+            {{subscribedUser}}
+            <repo-list *ngIf = "subsribedUser" 
+                       [Projects] = "Projects"
                        (selectedProjectBox) = "selected = $event">
             </repo-list>
+            
         </div>
 
         <div class="col-xl-9">

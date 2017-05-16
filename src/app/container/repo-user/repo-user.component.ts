@@ -21,12 +21,13 @@ import {
     constructor(){}
      
     ngOnInit(){
-       this.user = localStorage.getItem('user') || null;
+        this.user = localStorage.getItem('user') || null;
+        this.subscribedUser.emit(this.user);
     }
      
     unwatch(){
         localStorage.removeItem('user');
-        this.user = null;
+        location.reload();
     } 
     
  }
