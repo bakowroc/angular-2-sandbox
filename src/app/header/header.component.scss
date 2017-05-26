@@ -1,0 +1,15 @@
+main-header {
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        float: left;
+        background-color: cornflowerblue;
+        padding: 20px;
+        height: auto;
+        width: 100%;
+        box-shadow: 2px 3px 8px rgba(black, 0.2);
+        z-index: $mostly-on-top;
+    } 
+} 

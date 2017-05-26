@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+
+        <li *ngFor="let project of Projects | search: filterBy; let projectIndex=index"
+            (click)="selectProject(projectIndex)"
+            [class.selected]="projectIndex == selectedProjectIndex">
+            {{project.name}}
+
+        </li>
+    </ul>
+</nav>

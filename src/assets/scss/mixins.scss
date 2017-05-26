@@ -1,0 +1,73 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+};
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+};
+
+@mixin focus ($action){
+    @if $action == 'reset' {
+        outline: none;
+    }
+}
+
+@mixin input($font){
+    width: 100%;
+    padding: 11px 10px 9px 10px;
+    text-align: left;
+    font-size: $font;
+    color: #000;
+    border: none;
+}
+
+@mixin button($background, $padding: 7px, $type: 'normal', $radius: 2px){
+    text-decoration: none;
+    width: 100%;
+    padding: $padding;
+    @if $type == 'square' {
+       padding: $padding 2* $padding;
+    }
+    text-align: center;
+    background: $background;
+    border-bottom: 2px solid darken($background, 10%);
+    color: #fff;
+    @include border-radius($radius);
+    &:hover{
+        background: lighten($background, 5%);
+        cursor: pointer;
+    }
+}
+
+@mixin vertical-menu($link-color, $margin){
+    ul{
+        display: inline-block;
+        float: left;
+        width: auto;
+        >li{
+            display: inline;
+            float: left;
+            margin-right: $margin;
+            padding: 5px;
+            text-align: center;
+            &:last-child{
+                margin-right: 0;
+            }
+            >a{
+                text-decoration: none;
+                width: 100%;
+                float: left;
+                color: $link-color;
+                &:hover{
+                    color: rgba($link-color, 0.8);
+                }
+            }
+        }
+    }
+};

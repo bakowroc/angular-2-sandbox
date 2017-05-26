@@ -1,0 +1,15 @@
+search-box{
+    float: right;
+    width: 100%;
+    max-width: 300px;
+
+    input{
+        @include placeholder(){
+            color: rgba(black, 0.4);
+        }
+        @include focus('reset');
+        @include input($font-normal); 
+        @include border-radius(2px); 
+   
+    }
+}

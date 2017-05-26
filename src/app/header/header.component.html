@@ -1,0 +1,7 @@
+<header>
+    <navigation></navigation>
+    <search-box (searchValue)="searchValue = $event">
+    </search-box>
+    <search-results *ngIf="searchValue" [filterBy] = "searchValue">
+    </search-results>
+</header>

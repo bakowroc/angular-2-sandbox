@@ -1,0 +1,43 @@
+repo-box{
+    @include border-radius(2px);
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: darken(#fff, 1%);
+    box-shadow: 1px 1px 1px rgba(black, 0.06);
+    position: relative;
+    .title, .desc, .author, .date, .link{
+        float: left;
+        margin-bottom: 20px;
+    }
+    .title{
+        font-size: $font-main-title;
+        width: 100%;
+    
+    }
+    .author, .date{
+        font-size: $font-small-desc;
+        color: #ccc;
+    }
+    .date{
+        float: right;
+    }
+    .desc{
+        font-size: $font-normal;
+        clear:both;
+    }
+    .button-overflow{
+        float: right;
+        width: 180px;
+        clear: both;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        .link{
+            @include button($flat-green);
+            clear: both;
+            margin-bottom: 0;
+        }
+    }
+}

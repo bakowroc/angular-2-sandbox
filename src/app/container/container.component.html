@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <h1 class="container-title">Meet your repo!</h1>
+        </div>
+        <div class="col-xl-3">
+            
+            <repo-user (subscribedUser) = "handleSubscribedUser($event)"></repo-user>
+            <search-box (searchValue) = "filterBy = $event"></search-box>
+            <repo-list 
+                       [filterBy] = "filterBy"
+                       [Projects] = "Projects"
+                       (selectedProjectBox) = "selected = $event">
+            </repo-list>
+            
+        </div>
+
+        <div class="col-xl-9">
+
+            <repo-box *ngIf = "selected"
+                      [project] = "selected">
+            </repo-box>
+
+        </div>
+    </div>
+</div>
